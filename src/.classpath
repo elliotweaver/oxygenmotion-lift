@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry excluding="code/" kind="src" path="main/scala"/>
+	<classpathentry kind="src" path="main/scala/code"/>
+	<classpathentry excluding="code/" kind="src" path="test/scala"/>
+	<classpathentry kind="src" path="test/scala/code"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
