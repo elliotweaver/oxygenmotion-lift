@@ -4,6 +4,7 @@
 	<classpathentry kind="src" path="main/scala/code"/>
 	<classpathentry excluding="code/" kind="src" path="test/scala"/>
 	<classpathentry kind="src" path="test/scala/code"/>
+	<classpathentry kind="con" path="org.scala-ide.sdt.launching.SCALA_CONTAINER"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
