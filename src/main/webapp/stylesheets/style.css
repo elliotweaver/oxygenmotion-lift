@@ -455,6 +455,7 @@ html[xmlns] .clearfix {
 .how .items {
 	  margin: 30px 0 30px 0;
     overflow: hidden;
+    clear: both;
 }
 .how .item {
 	  float: left;
