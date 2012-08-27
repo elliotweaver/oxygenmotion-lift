@@ -305,7 +305,7 @@ html[xmlns] .clearfix {
 }
 .hero .wrapper {
 	  background: none repeat scroll 0 0 #FFFFFF;
-	  padding-bottom: 50px;
+	  padding-bottom: 10px;
 }
 .hero .inside {
 	  margin: 0;
@@ -425,8 +425,8 @@ html[xmlns] .clearfix {
 .how {}
 .how .wrapper {
 	  background: url(../images/bg-top-shadow.jpg) no-repeat scroll top center #FFFFFF;
-    padding-top: 100px;
-    padding-bottom: 90px;
+    padding-top: 115px;
+    padding-bottom: 78px;
 }
 .how .inside {}
 .how hgroup {
@@ -498,6 +498,7 @@ html[xmlns] .clearfix {
 }
 .work .wrapper {
 	  background: url("../images/bg-btm-grey.png") repeat-x scroll top center #454D55;
+	  padding-top: 45px;
 }
 .work .inside {
 	  color: #C7CACD;
@@ -855,7 +856,8 @@ html[xmlns] .clearfix {
 .contact .wrapper {
 	  background: url("../images/bg-dots.jpg") no-repeat scroll bottom right #FFFFFF;
     position: relative;
-    padding-bottom: 30px;
+    padding-bottom: 75px;
+    padding-top: 30px;
 }
 .contact .inside {}
 /* contact top */
@@ -1094,7 +1096,7 @@ select, input[type="file"] {
 .mini-nav {
 	  clear: both;
     margin-right: 5px;
-    padding-top: 0px;
+    padding-top: 6px;
     padding-bottom: 10px;
     overflow: hidden;
 }
@@ -1135,8 +1137,8 @@ select, input[type="file"] {
     background: url("../images/arr_da.png") no-repeat scroll right center transparent;
 }
 .work .mini-nav {
-	  margin-top: 30px;
-    padding-bottom: 0;
+	  margin-top: 0px;
+    padding-bottom: 30px;
 }
 .contact .mini-nav {
 	  margin-right: 20px;
