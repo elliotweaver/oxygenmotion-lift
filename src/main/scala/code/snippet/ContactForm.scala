@@ -27,19 +27,12 @@ class ContactForm {
     var phone = ""
     var deadline = ""
     var budget = ""
-    var project = ""
     val budgetMap = List( ("-none-", "- Budget* -"),
     					("8k-10k", "8k-10k"),
     					("10k-25k", "10k-25k"),
     					("25k-50k", "25k-50k"),
     					("50k-100k", "50k-100k"),
     					("100k+", "100k+") )
-    val projectMap = List( ("-none-", "- Project Type* -"),
-    					("Motion Graphics", "Motion Graphics"),
-    					("Flash Presentations", "Flash Presentations"),
-    					("Video Production", "Video Production"),
-    					("Web Development", "Web Development"),
-    					("Web Design", "Web Design") )
     val whence = S.referer openOr "/"
     
     // our process method returns a
@@ -66,9 +59,6 @@ class ContactForm {
       if (budget == "-none-"){
     	valid = false; S.error("Budget: Please select a budget");
       }
-      if (project == "-none-") {
-    	valid = false; S.error("Project Type: Please select a project type");
-      }
 
       if (valid == true) {
         
@@ -80,15 +70,14 @@ class ContactForm {
 	        	.phone(phone)
 	        	.deadline(deadline)
 	        	.budget(budget)
-	        	.project(project)
 	        	.save
         
         val htmlBackend = <html>
    <head>
-     <title>Website Quote: {project}</title>
+     <title>Motion Website Quote: {name}</title>
    </head>
    <body>
-    <h1>Website Quote: {project}</h1>
+    <h1>Motion Website Quote: {name}</h1>
     <ul>
       <h2>Contact Details</h2>
       <li><strong>Name: </strong>{name}</li>
@@ -99,7 +88,6 @@ class ContactForm {
     </ul>
     <ul>
       <h2>Project Details</h2>
-      <li><strong>Projects Type: </strong>{project}</li>
       <li><strong>Budget: </strong>{budget}</li>
       <li><strong>Deadline: </strong>{deadline}</li>
       <li><strong>Description: </strong>{description}</li>
@@ -119,7 +107,7 @@ class ContactForm {
 
         Mailer.sendMail(
 	      From("elliot@oxygenproductions.com"),
-	      Subject("Website Quote: "+project),
+	      Subject("Motion Website Quote: "+name),
 	      To("elliot.weaver@gmail.com"),
 	      htmlBackend)
 	      
@@ -139,7 +127,6 @@ class ContactForm {
 	    phone = ""
 	    deadline = ""
 	    budget = "-none-"
-	    project = "-none-"
 
         SetValById("contact_name", name) & 
         SetValById("contact_email", email) &
@@ -148,8 +135,7 @@ class ContactForm {
         SetValById("contact_company", company) &
         SetValById("contact_phone", phone) &
         SetValById("contact_deadline", deadline) &
-        SetValById("contact_budget", budget) &
-        SetValById("contact_project", project)
+        SetValById("contact_budget", budget)
         
       }
       
@@ -164,8 +150,7 @@ class ContactForm {
     "name=company" #> SHtml.text(company, company = _) &
     "name=phone" #> SHtml.text(phone, phone = _) &
     "name=deadline" #> SHtml.text(deadline, deadline = _) &
-    "name=budget" #> SHtml.select(budgetMap, Empty, budget = _) &
-    "name=project" #> (SHtml.select(projectMap, Empty, project = _, "id" -> "contact_project") ++ SHtml.hidden(process))
+    "name=budget" #> (SHtml.select(budgetMap, Empty, budget = _)  ++ SHtml.hidden(process))
   }
   
 }

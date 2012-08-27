@@ -75,6 +75,8 @@ html[xmlns] .clearfix {
     cursor: pointer;
     float: left;
     text-shadow: 1px 1px 1px #888888;
+    color: #FFFFFF;
+    font-size: 20px;
 }
 .controls {
 	  position: absolute;
@@ -1024,6 +1026,9 @@ input, textarea, select, .uneditable-input {
     padding: 4px;
     width: 210px;
 }
+.contact-right .contact-form select {
+	width: 289px;
+}
 input, textarea, select, *:-moz-placeholder {
     background-image: -moz-linear-gradient(center bottom , #FAFAFA 5%, #DDDFE3 53%);
     border: 1px solid #919498;
@@ -1178,4 +1183,14 @@ select, input[type="file"] {
 }
 .scrollblock {
 	  width: 100%;
+}
+#cboxOverlay {
+	 background: none repeat scroll 0 0 #000000;
+    cursor: pointer;
+    display: block;
+    height: 100%;
+    opacity: 0.9;
+    position: fixed;
+    top: 0;
+    width: 100%;
 }
