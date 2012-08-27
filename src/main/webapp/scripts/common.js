@@ -1,5 +1,42 @@
 $(document).ready(function() {
   
+  var controller = $.scrollorama({
+    blocks: '.hero',
+    enablePin: false
+  });
+  $('.scrollblock').css('position', 'relative').css('top', '0');
+
+  controller.animate(
+      '.t-phone',
+      { 
+        delay: 0, 
+        duration: 800, 
+        property:'top', 
+        start:135, 
+        end:600
+      }
+    );
+  controller.animate(
+      '.t-ipad',
+      { 
+        delay: 0, 
+        duration: 800, 
+        property:'top', 
+        start:139, 
+        end:500 
+      }
+    );
+  controller.animate(
+      '.t-stage',
+      { 
+        delay: 0, 
+        duration: 800, 
+        property:'top', 
+        start:0, 
+        end:500 
+      }
+    );
+  
   //colorbox
   $("a.cb").colorbox({iframe:true, innerWidth:900, innerHeight:600});
   

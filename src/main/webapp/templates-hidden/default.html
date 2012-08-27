@@ -7,16 +7,19 @@
     <title>Oxygen Productions: Flash Presentations, Motion Graphics, Full Service Interactive Design Agency, Flash Software Presentation Design</title>
     <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon"></link>
     <link href="/stylesheets/style.css" type="text/css" rel="stylesheet" ></link>
-    <script id="jquery" src="/classpath/jquery.js" type="text/javascript"></script>
+    <script id="jquery" src="/scripts/jquery-1.7.1.js" type="text/javascript"></script>
     <script id="jquery" src="/scripts/jquery.colorbox-min.js" type="text/javascript"></script>
+    <script id="jquery" src="/scripts/scrollorama.js" type="text/javascript"></script>
     <script id="jquery" src="/scripts/common.js" type="text/javascript"></script>
   </head>
   <body>
     
-    <a name="top"></a>
-    <div class="lift:embed?what=templates/_header">Header</div>
-    <lift:bind name="content"></lift:bind>
-    <div class="lift:embed?what=templates/_footer">Footer</div>
+    <div class="scrollblock">
+	    <a name="top"></a>
+	    <div class="lift:embed?what=templates/_header">Header</div>
+	    <lift:bind name="content"></lift:bind>
+	    <div class="lift:embed?what=templates/_footer">Footer</div>
+	  </div>
     
   </body>
 </html>

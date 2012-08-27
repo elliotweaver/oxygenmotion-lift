@@ -319,7 +319,6 @@ html[xmlns] .clearfix {
     position: relative;
 }
 .hero .video .image {
-	  background: url("../images/hero.jpg") no-repeat scroll center top transparent;
     height: 653px;
     text-align: center;
     width: 100%;
@@ -1147,4 +1146,34 @@ select, input[type="file"] {
 .hero .mini-nav {
     padding: 20px 0;
     position: relative;
+}
+.hero .video .image .items {
+	  height: 1500px;
+    margin: 0 auto;
+    position: relative;
+    width: 1010px;
+}
+.hero .video .image .items img {}
+.hero .video .image .items .t-screen {
+	  left: 222px;
+    position: absolute;
+    top: 0px;
+}
+.hero .video .image .items .t-phone {
+	  position: absolute;
+    left: -415px;
+    top: 135px;
+}
+.hero .video .image .items .t-ipad {
+	  position: absolute;
+    left: -144px;
+    top: 139px;
+}
+.hero .video .image .items .t-stage {
+	  position: absolute;
+    left: -36px;
+    top: -54px;
+}
+.scrollblock {
+	  width: 100%;
 }
