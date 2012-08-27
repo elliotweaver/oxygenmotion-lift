@@ -305,6 +305,7 @@ html[xmlns] .clearfix {
 }
 .hero .wrapper {
 	  background: none repeat scroll 0 0 #FFFFFF;
+	  padding-bottom: 50px;
 }
 .hero .inside {
 	  margin: 0;
@@ -425,16 +426,14 @@ html[xmlns] .clearfix {
 .how {}
 .how .wrapper {
 	  background: url(../images/bg-top-shadow.jpg) no-repeat scroll top center #FFFFFF;
-    padding-top: 60px;
+    padding-top: 100px;
+    padding-bottom: 90px;
 }
 .how .inside {}
 .how hgroup {
 	  overflow: hidden;
 }
 .how hgroup h1 {
-	  text-shadow: 1px 1px 1px #000000;
-    -webkit-text-shadow: 1px 1px 1px #000000;
-    -moz-text-shadow: 1px 1px 1px #000000;
 	  background: #ff0143;
     color: #FFFFFF;
     font-weight: normal;
@@ -443,6 +442,7 @@ html[xmlns] .clearfix {
     padding: 5px 10px;
     float: left;
     margin-right: 20px;
+    text-transform: uppercase;
 }
 .how hgroup h2 {
 	  float: left;
@@ -470,7 +470,7 @@ html[xmlns] .clearfix {
 	  -moz-text-shadow: 1px 1px 1px #000000;
 	  color: #FFFFFF;
     font-family: verdana;
-    font-size: 12px;
+    font-size: 11px;
     height: 72px;
     line-height: 13px;
     margin: 0;
@@ -531,6 +531,7 @@ html[xmlns] .clearfix {
     font-weight: normal;
     margin-right: 20px;
     padding: 5px 10px;
+    text-transform: uppercase;
 }
 .projects hgroup h2 {
 	  clear: left;
@@ -622,6 +623,7 @@ html[xmlns] .clearfix {
     font-weight: normal;
     margin-right: 20px;
     padding: 5px 10px;
+    text-transform: uppercase;
 }
 .clients p {
 	  clear: left;
@@ -897,9 +899,6 @@ html[xmlns] .clearfix {
 }
 .contact-left {}
 .contact-left h1 {
-	  text-shadow: 1px 1px 1px #000000;
-    -webkit-text-shadow: 1px 1px 1px #000000;
-    -moz-text-shadow: 1px 1px 1px #000000;
 	  background: none repeat scroll 0 0 #FF0143;
     color: #FFFFFF;
     float: left;
@@ -909,6 +908,7 @@ html[xmlns] .clearfix {
     margin-right: 20px;
     margin-bottom: 30px;
     padding: 5px 10px;
+    text-transform: uppercase;
 }
 .contact-left ul {}
 .contact-left ul li {}
@@ -967,9 +967,6 @@ html[xmlns] .clearfix {
 	  padding-left: 20px;
 }
 .contact-right h1 {
-	  text-shadow: 1px 1px 1px #000000;
-    -webkit-text-shadow: 1px 1px 1px #000000;
-    -moz-text-shadow: 1px 1px 1px #000000;
     background: none repeat scroll 0 0 #FF0143;
     color: #FFFFFF;
     float: left;
@@ -978,6 +975,7 @@ html[xmlns] .clearfix {
     font-weight: normal;
     margin-right: 20px;
     padding: 5px 10px;
+    text-transform: uppercase;
 }
 .contact-right h2 {
 	  color: #939393;
@@ -1105,7 +1103,7 @@ select, input[type="file"] {
     text-shadow: 0 0 0 transparent;
     -webkit-text-shadow: 0 0 0 transparent;
     -moz-text-shadow: 0 0 0 transparent;
-    color: #FF0143;
+    color: #00a6e4;
     float: right;
     font-family: helvetica;
     font-size: 14px;
@@ -1116,31 +1114,30 @@ select, input[type="file"] {
     padding-left: 20px;
 }
 .mini-nav a.up {
-	  background: url("../images/arrow_ur.png") no-repeat scroll left center transparent;
-    /* color: #07AFED; */
-    float: left;
-    padding: 5px 20px 5px 29px;
+	  background: url("../images/arr_u.png") no-repeat scroll right center transparent;
+    float: right;
+    padding: 5px 0px 5px 26px;
+    text-indent: -99999px;
+}
+.work .mini-nav a.up {
+    background: url("../images/arr_ua.png") no-repeat scroll right center transparent;
+    float: right;
+    padding: 5px 0px 5px 26px;
+    text-indent: -99999px;
+}
+.contact .mini-nav a.up {
+    text-indent: 0;
+    padding-right: 30px;
 }
 .mini-nav a.down {
-	  background: url("../images/arrow_dr.png") no-repeat scroll right center transparent;
+	  background: url("../images/arr_d.png") no-repeat scroll right center transparent;
+}
+.work .mini-nav a.down {
+    background: url("../images/arr_da.png") no-repeat scroll right center transparent;
 }
 .work .mini-nav {
 	  margin-top: 30px;
     padding-bottom: 0;
-}
-.work .mini-nav .sup {
-	  background: url("../images/bg-clients.png") repeat scroll 0 0 transparent;
-    display: block;
-    overflow: hidden;
-    float: left;
-    padding-left: 15px;
-}
-.work .mini-nav .sdown {
-	  background: url("../images/bg-clients.png") repeat scroll 0 0 transparent;
-    display: block;
-    overflow: hidden;
-    float: right;
-    padding-right: 15px;
 }
 .contact .mini-nav {
 	  margin-right: 20px;

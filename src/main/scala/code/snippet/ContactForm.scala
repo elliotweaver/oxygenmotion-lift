@@ -12,9 +12,12 @@ import scala.xml.NodeSeq
 import util.Mailer
 import Mailer._
 
+import code.model._
+
 class ContactForm {
  
   def render = {
+    
     // state
     var name = ""
     var email = ""
@@ -68,6 +71,17 @@ class ContactForm {
       }
 
       if (valid == true) {
+        
+	    Contact.createRecord
+	        	.name(name)
+	        	.email(email)
+	        	.description(description)
+	        	.company(company)
+	        	.phone(phone)
+	        	.deadline(deadline)
+	        	.budget(budget)
+	        	.project(project)
+	        	.save
         
         val htmlBackend = <html>
    <head>
