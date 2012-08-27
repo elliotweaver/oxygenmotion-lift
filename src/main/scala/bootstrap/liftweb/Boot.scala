@@ -9,7 +9,6 @@ import http._
 import sitemap._
 import Loc._
 
-import code.db._
 import code.model._
 
 import auth._
