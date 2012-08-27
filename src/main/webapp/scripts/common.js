@@ -71,13 +71,13 @@ $(document).ready(function() {
        destination = 150;
      }
      if (elementClicked == '#how-we-do-it') {
-       destination = 780;
+       destination = 770;
      }
      if (elementClicked == '#projects') {
-       destination = 1320;
+       destination = 1440;
      }
      if (elementClicked == '#free-quote') {
-       destination = 1970;
+       destination = 2110;
      }
      $("html:not(:animated),body:not(:animated)").animate({ scrollTop: destination-20}, 500 );
      return false;
