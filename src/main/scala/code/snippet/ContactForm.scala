@@ -107,15 +107,15 @@ class ContactForm {
   </html>
 
         Mailer.sendMail(
-	      From("elliot@oxygenproductions.com"),
+	      From("admin@oxygenproductions.com"),
 	      Subject("Motion Website Quote: "+name),
-	      To("elliot.weaver@gmail.com"),
+	      To("elliot@oxygenproductions.com, janet@oxygenproductions.com, pat@oxygenproductions.com, ron@oxygenproductions.com"),
 	      htmlBackend)
 	      
 	    Mailer.sendMail(
-	      From("elliot@oxygenproductions.com"),
+	      From("admin@oxygenproductions.com"),
 	      Subject("Thank you for your request!"),
-	      To("elliot.weaver@gmail.com"),
+	      To(email),
 	      htmlUser)
 	    
         S.notice("Thank You! We'll be in contact with you shortly.");
