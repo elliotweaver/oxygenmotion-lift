@@ -1137,8 +1137,9 @@ select, input[type="file"] {
     text-indent: -99999px;
 }
 .contact .mini-nav a.up {
-    text-indent: 0;
     padding-right: 30px;
+    text-indent: 0;
+    color: #adbabf;
 }
 .mini-nav a.down {
 	  background: url("../images/arr_d.png") no-repeat scroll right center transparent;
