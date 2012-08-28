@@ -26,10 +26,15 @@ class Boot extends Loggable{
     // where to search snippet
     LiftRules.addToPackages("code")
     
-	val srvr = new ServerAddress("127.0.0.1", 27017)
+	//val srvr = new ServerAddress("ds035237.mongolab.com", 35237)
+    val srvr = new ServerAddress(
+       Props.get("mongo.host", "ds035237.mongolab.com"),
+       Props.getInt("mongo.port", 35237)
+    )
 	val mo = new MongoOptions
 	mo.socketTimeout = 10
-	MongoDB.defineDb(DefaultMongoIdentifier, new Mongo(srvr, mo), "oxygenmotion")
+	MongoDB.defineDbAuth(DefaultMongoIdentifier, new Mongo(srvr), "oxygenmotion", "oxygen", "0xygenPro")
+	//MongoDB.defineDb(DefaultMongoIdentifier, new Mongo(srvr, mo), "oxygenmotion")
 	
 	val roles = AuthRole("admin", "user")
 	

@@ -65,6 +65,7 @@ class ContactForm {
 	    Contact.createRecord
 	        	.name(name)
 	        	.email(email)
+	        	.url(url)
 	        	.description(description)
 	        	.company(company)
 	        	.phone(phone)
@@ -145,7 +146,7 @@ class ContactForm {
     // binding looks normal
     "name=name" #> SHtml.text(name, name = _) &
     "name=email" #> SHtml.text(email, email = _) &
-    "name=url" #> SHtml.text(url, url = _) &
+    "name=urllink" #> SHtml.text(url, url = _) &
     "name=description" #> SHtml.textarea(description, description = _, "cols" -> "10", "rows" -> "5") &
     "name=company" #> SHtml.text(company, company = _) &
     "name=phone" #> SHtml.text(phone, phone = _) &
