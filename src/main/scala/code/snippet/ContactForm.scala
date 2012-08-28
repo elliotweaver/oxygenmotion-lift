@@ -109,7 +109,7 @@ class ContactForm {
         Mailer.sendMail(
 	      From("admin@oxygenproductions.com"),
 	      Subject("Motion Website Quote: "+name),
-	      To("elliot@oxygenproductions.com, janet@oxygenproductions.com, pat@oxygenproductions.com, ron@oxygenproductions.com"),
+	      To("elliot@oxygenproductions.com,janet@oxygenproductions.com,pat@oxygenproductions.com,ron@oxygenproductions.com"),
 	      htmlBackend)
 	      
 	    Mailer.sendMail(
