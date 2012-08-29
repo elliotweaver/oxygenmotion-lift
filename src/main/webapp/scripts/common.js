@@ -1,6 +1,6 @@
 $(document).ready(function() {
   
-  $("input").each(function(){
+  $("input, textarea").each(function(){
       if($(this).val()=="" && $(this).attr("placeholder")!=""){
         $(this).val($(this).attr("placeholder"));
         $(this).focus(function(){
