@@ -62,7 +62,7 @@ $(document).ready(function() {
   });
 
 
-  $('.header nav ul li a, .free-quote, .mini-nav a').click(function() {
+  $('.header nav ul li a, .free-quote, .mini-nav a, .heroleft a').click(function() {
      var elementClicked = $(this).attr("href");
      if (elementClicked == '#top') {
        destination = 0;
