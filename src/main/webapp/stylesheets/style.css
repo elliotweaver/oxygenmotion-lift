@@ -18,6 +18,9 @@ a {
 a:hover {
 	  text-decoration: underline;
 }
+a img {
+	border: medium none;
+}
 ul {
 	  padding-left: 25px;
 }
