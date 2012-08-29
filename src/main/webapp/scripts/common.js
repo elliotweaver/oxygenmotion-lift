@@ -1,12 +1,15 @@
 $(document).ready(function() {
   
-  $("'[placeholder]'").parents("'form'").submit(function() {
-    $(this).find("'[placeholder]'").each(function() {
-      var input = $(this);
-      if (input.val() == input.attr("'placeholder'")) {
-        input.val("''");
+  $("input").each(function(){
+      if($(this).val()=="" && $(this).attr("placeholder")!=""){
+        $(this).val($(this).attr("placeholder"));
+        $(this).focus(function(){
+            if($(this).val()==$(this).attr("placeholder")) $(this).val("");
+        });
+        $(this).blur(function(){
+          if($(this).val()=="") $(this).val($(this).attr("placeholder"));
+        });
       }
-    })
   });
   
   
