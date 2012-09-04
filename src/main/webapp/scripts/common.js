@@ -77,19 +77,19 @@ $(document).ready(function() {
 
   $('.header nav ul li a, .free-quote, .mini-nav a, .heroleft a').click(function() {
      var elementClicked = $(this).attr("href");
-     if (elementClicked == '#top') {
+     if (elementClicked == '#top' || elementClicked == '/#top') {
        destination = 0;
      }
-     if (elementClicked == '#what-we-do') {
+     if (elementClicked == '#what-we-do' || elementClicked == '/#what-we-do') {
        destination = 150;
      }
-     if (elementClicked == '#how-we-do-it') {
+     if (elementClicked == '#how-we-do-it' || elementClicked == '/#how-we-do-it') {
        destination = 770;
      }
-     if (elementClicked == '#projects') {
+     if (elementClicked == '#projects' || elementClicked == '/#projects') {
        destination = 1440;
      }
-     if (elementClicked == '#free-quote') {
+     if (elementClicked == '#free-quote' || elementClicked == '/#free-quote') {
        destination = 2110;
      }
      $("html:not(:animated),body:not(:animated)").animate({ scrollTop: destination-20}, 500 );

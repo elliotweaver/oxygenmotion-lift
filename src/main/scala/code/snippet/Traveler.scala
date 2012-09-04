@@ -114,8 +114,8 @@ class Traveler {
       //roads(i)(j) = coordsToRoad(i, j)
       //println(rows(i)(j))
       //println("i: "+i+" j: "+j)
-      //roads(i)(j) = nextInt(w)
-      roads(i)(j) = rows(i)(j)
+      roads(i)(j) = nextInt(w)
+      //roads(i)(j) = rows(i)(j)
   }
   
   /* converts a set of coordinates to a single road */

@@ -1203,3 +1203,49 @@ select, input[type="file"] {
     top: 0;
     width: 100%;
 }
+
+.wrap {
+	  background: none repeat scroll 0 0 #FFFFFF;
+    padding: 50px 0 100px;
+}
+.wrap-inside {
+	  margin: 0 auto;
+    width: 968px;
+}
+.user-screens table {
+	  margin: 0 auto;
+    width: 40%;
+}
+.user-screens tr td:first-child {
+	  width: 170px;
+}
+.user-screens tr:first-child td {
+	  background: none repeat scroll 0 0 #888888;
+    color: #FFFFFF;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 5px 10px;
+}
+.user-screens [type="submit"] {
+	 background: url("../images/btn-sendit.png") repeat scroll 0 0 transparent;
+    border: medium none;
+    box-shadow: 0 0 0 transparent;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: bold;
+    height: 34px;
+    padding: 5px 20px;
+    text-indent: -9999px;
+    text-shadow: 1px 1px #666666;
+    width: 83px;
+}
+.user-screens [type="submit"]:hover {
+	  background: url("../images/btn-sendit.png") repeat scroll 0 -40px transparent;
+}
+.user-screens a {
+	  color: #00A6E4;
+}
+.user-screens a:hover {
+	  color: #FF0143;
+}

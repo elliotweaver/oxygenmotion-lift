@@ -11,11 +11,6 @@ import Loc._
 
 import code.model._
 
-import auth._
-
-import com.mongodb.{Mongo, MongoOptions, ServerAddress}
-import net.liftweb.mongodb.{DefaultMongoIdentifier, MongoDB}
-
 /**
  * A class that's instantiated early and run.  It allows the application
  * to modify lift's environment
@@ -25,45 +20,20 @@ class Boot extends Loggable{
 	
     // where to search snippet
     LiftRules.addToPackages("code")
-    
-	//val srvr = new ServerAddress("ds035237.mongolab.com", 35237)
-    val srvr = new ServerAddress(
-       Props.get("mongo.host", "ds035237.mongolab.com"),
-       Props.getInt("mongo.port", 35237)
-    )
-	val mo = new MongoOptions
-	mo.socketTimeout = 10
-	MongoDB.defineDbAuth(DefaultMongoIdentifier, new Mongo(srvr), "oxygenmotion", "oxygen", "0xygenPro")
-	//MongoDB.defineDb(DefaultMongoIdentifier, new Mongo(srvr, mo), "oxygenmotion")
-	
-	val roles = AuthRole("admin", "user")
-	
-    LiftRules.httpAuthProtectedResource.prepend {
-       case (Req("user" :: Nil, _, _)) => Full(AuthRole("admin"))
-     }
-
-     LiftRules.authentication = HttpBasicAuthentication("Oxygen Motion") {
-       case ("oxygen", "0xygenPro", req) => {
-         logger.info("You are now authenticated !")
-         userRoles(AuthRole("admin"))
-         true
-       }
-     }
 
     // Build SiteMap
     val entries = List(
-      Menu.i("Home") / "index", // the simple way to declare a menu
-      Menu.i("Traveler") / "traveler", // the simple way to declare a menu
-      Menu.i("User") / "user", // the simple way to declare a menu
-
-      // more complex because this menu allows anything in the
-      // /static path to be visible
-      Menu(Loc("Static", Link(List("static"), true, "/static/index"), 
-	       "Static Content")))
+      //Menu.i("Home") / "index" >> User.AddUserMenusAfter, // Simple menu form
+      Menu.i("Home") / "index"
+      //Menu.i("Admin") / "admin" / "index" >> If(() => User.loggedIn_?, "You must be logged in")
+      //Menu.i("Admin") / "admin" / "index" >> LocGroup("TopBarGroup")
+    )
 	  
     // set the sitemap.  Note if you don't want access control for
     // each page, just comment this line out.
     LiftRules.setSiteMap(SiteMap(entries:_*))
+    
+    //LiftRules.setSiteMapFunc(() => User.sitemapMutator(SiteMap(entries:_*)))
 
     // Use jQuery 1.4
     LiftRules.jsArtifacts = net.liftweb.http.js.jquery.JQuery14Artifacts
@@ -79,10 +49,15 @@ class Boot extends Loggable{
     // Force the request to be UTF-8
     LiftRules.early.append(_.setCharacterEncoding("UTF-8"))
     
+    LiftRules.loggedInTest = Full(() => User.loggedIn_?)
+    
     // Use HTML5 for rendering
 	LiftRules.htmlProperties.default.set((r: Req) =>
 	  new Html5Properties(r.userAgent))  
 	  
 	//LiftRules.noticesAutoFadeOut.default.set((noticeType: NoticeType.Value) => Full((1 seconds, 2 seconds)))
+	  
+	MongoConfig.init
+	
   }
 }

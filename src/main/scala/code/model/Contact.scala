@@ -19,4 +19,5 @@ class Contact private () extends MongoRecord[Contact] with ObjectIdPk[Contact] {
 	object budget extends StringField(this, "")
 
 }
+
 object Contact extends Contact with MongoMetaRecord[Contact]
