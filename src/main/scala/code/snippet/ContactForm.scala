@@ -137,7 +137,7 @@ class ContactForm {
 	    Mailer.sendMail(
 	      From("admin@oxygenproductions.com"),
 	      Subject("Motion Website Quote: "+name),
-	      To("pat@oxygenproductions.com"),
+	      To("patrick@oxygenproductions.com"),
 	      htmlBackend)
 	      
 	    Mailer.sendMail(
@@ -171,8 +171,6 @@ class ContactForm {
         SetValById("contact_phone", phone) &
         SetValById("contact_deadline", deadline) &
         SetValById("contact_budget", budget)
-        
-        //Replace("adwords_conversion", <img src="" width="1" height="1" style="visibility:hidden;" alt="" id="adwords_conversion" />)
         
       }
       
