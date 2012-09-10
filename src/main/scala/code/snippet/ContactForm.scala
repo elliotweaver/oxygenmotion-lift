@@ -34,34 +34,42 @@ class ContactForm {
     					("50k-100k", "50k-100k"),
     					("100k+", "100k+") )
     val whence = S.referer openOr "/"
-    
-    println("AAAAAAAAAAA")
-    println(S.referer)
-    println("BBBBBBBBBBB")
-    
+    val ref = S.referer
+    var ref_terms = {
+      for {
+	      queryString <- S.referer.toList
+	      nameVal <- queryString.split("&").toList.map(_.trim).filter(_.length > 0)
+	      (name, value) <- nameVal.split("=").toList match {
+	        case Nil => Empty
+	        case n :: v :: _ => Full((urlDecode(n), urlDecode(v)))
+	        case n :: _ => Full((urlDecode(n), ""))
+      	  }
+	      if name == "q"
+      } yield (name, value)
+    }
+       
     // our process method returns a
     // JsCmd which will be sent back to the browser
     // as part of the response
+    
     def process(): JsCmd= {
       
       // sleep for 400 millis to allow the user to
       // see the spinning icon
       Thread.sleep(400)
       
-      println("YYYYYYYYYYY")
-      println(S.referer)
-      println("ZZZZZZZZZZZ")
-      
       var valid = true;
        
       // do the matching
-      if (name.length == 0) {
+      println("NAME: "+name)
+      if (name.length == 0 || name == "Name*") {
+        println("NAMENAMENAMENAME")
         valid = false; S.error("Name: Please enter a name");
       } 
-      if (email.length== 0) {
+      if (email.length == 0 || email == "Email*") {
     	valid = false; S.error("Email: Please enter an email");
       }
-      if (description.length == 0) {
+      if (description.length == 0 || description == "Short Description*") {
     	valid = false; S.error("Description: Please enter a short description");
       }
       if (budget == "-none-"){
@@ -100,6 +108,11 @@ class ContactForm {
       <li><strong>Budget: </strong>{budget}</li>
       <li><strong>Deadline: </strong>{deadline}</li>
       <li><strong>Description: </strong>{description}</li>
+    </ul>
+    <ul>
+      <h2>Search</h2>
+      <li><strong>Referer: </strong>{ref}</li>
+      <li><strong>Search Terms: </strong>{ref_terms}</li>
     </ul>
    </body>
   </html>
