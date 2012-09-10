@@ -35,6 +35,10 @@ class ContactForm {
     					("100k+", "100k+") )
     val whence = S.referer openOr "/"
     
+    println("AAAAAAAAAAA")
+    println(S.referer)
+    println("BBBBBBBBBBB")
+    
     // our process method returns a
     // JsCmd which will be sent back to the browser
     // as part of the response
@@ -43,6 +47,10 @@ class ContactForm {
       // sleep for 400 millis to allow the user to
       // see the spinning icon
       Thread.sleep(400)
+      
+      println("YYYYYYYYYYY")
+      println(S.referer)
+      println("ZZZZZZZZZZZ")
       
       var valid = true;
        
