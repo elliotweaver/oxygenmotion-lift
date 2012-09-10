@@ -34,7 +34,6 @@ class ContactForm {
     					("50k-100k", "50k-100k"),
     					("100k+", "100k+") )
     val whence = S.referer openOr "/"
-    /*
     val ref = S.referer
     var ref_terms = {
       for {
@@ -48,7 +47,6 @@ class ContactForm {
 	      if name == "q"
       } yield (name, value)
     }
-    */
        
     // our process method returns a
     // JsCmd which will be sent back to the browser
@@ -109,6 +107,11 @@ class ContactForm {
       <li><strong>Budget: </strong>{budget}</li>
       <li><strong>Deadline: </strong>{deadline}</li>
       <li><strong>Description: </strong>{description}</li>
+    </ul>
+    <ul>
+      <h2>Search</h2>
+      <li><strong>Referer: </strong>{ref}</li>
+      <li><strong>Search Terms: </strong>{ref_terms}</li>
     </ul>
    </body>
   </html>
