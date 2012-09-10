@@ -115,6 +115,18 @@ class ContactForm {
 	      
 	    Mailer.sendMail(
 	      From("admin@oxygenproductions.com"),
+	      Subject("Motion Website Quote: "+name),
+	      To("pat@oxygenproductions.com"),
+	      htmlBackend)
+	      
+	    Mailer.sendMail(
+	      From("admin@oxygenproductions.com"),
+	      Subject("Motion Website Quote: "+name),
+	      To("elliot@oxygenproductions.com"),
+	      htmlBackend)
+	      
+	    Mailer.sendMail(
+	      From("admin@oxygenproductions.com"),
 	      Subject("Thank you for your request!"),
 	      To(email),
 	      htmlUser)
