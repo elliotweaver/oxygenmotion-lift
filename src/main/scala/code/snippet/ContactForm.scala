@@ -169,7 +169,14 @@ class ContactForm {
         SetValById("contact_company", company) &
         SetValById("contact_phone", phone) &
         SetValById("contact_deadline", deadline) &
-        SetValById("contact_budget", budget)
+        SetValById("contact_budget", budget) &
+        SetHtml("adw-conversion", 
+<noscript>
+<div style="display:inline;">
+<img height="1" width="1" style="border-style:none;" alt="" src="http://www.googleadservices.com/pagead/conversion/1071512688/?value=0&amp;label=hpzaCOLzugMQ8Pj3_gM&amp;guid=ON&amp;script=0"/>
+</div>
+</noscript>
+            )
         
       }
       
