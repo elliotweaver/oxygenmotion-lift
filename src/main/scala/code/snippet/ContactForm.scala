@@ -34,8 +34,8 @@ class ContactForm {
     					("50k-100k", "50k-100k"),
     					("100k+", "100k+") )
     val whence = S.referer openOr "/"
-    val ref = S.referer
-    var ref_terms = {
+    val ref = S.referer openOr "none"
+    val ref_terms = {
       for {
 	      queryString <- S.referer.toList
 	      nameVal <- queryString.split("&").toList.map(_.trim).filter(_.length > 0)
@@ -45,7 +45,7 @@ class ContactForm {
 	        case n :: _ => Full((urlDecode(n), ""))
       	  }
 	      if name == "q"
-      } yield (name, value)
+      } value.replace("+", " ")
     }
        
     // our process method returns a
