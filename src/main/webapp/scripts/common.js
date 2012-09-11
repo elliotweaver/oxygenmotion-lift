@@ -14,7 +14,7 @@ $(document).ready(function() {
   
   
   var controller = $.scrollorama({
-    blocks: '.hero',
+    blocks: '.scrollblock',
     enablePin: false
   });
   $('.scrollblock').css('position', 'relative').css('top', '0');

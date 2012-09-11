@@ -53,12 +53,12 @@ html[xmlns] .clearfix {
 	 position: absolute;
 }
 .wrapper {
-	  padding: 20px 100px;
+	  padding: 20px 0;
     overflow: hidden;
 }
 .inside {
-	  width: 968px;
-    margin: 0 auto;
+	  margin: 0 auto;
+    width: 1100px;
 }
 
 /** ------  Misc ------ **/
@@ -1248,4 +1248,13 @@ select, input[type="file"] {
 }
 .user-screens a:hover {
 	  color: #FF0143;
+}
+
+.inner-in {
+	  width: 968px;
+    margin: 0 auto;
+}
+.hero .inner-in {
+    margin: 0 auto;
+    width: 1100px;
 }
