@@ -154,13 +154,13 @@ class ContactForm {
         S.notice("Thank You! We'll be in contact with you shortly.");
 
         name = ""
-	    email = ""
-	    url = ""
-	    description = ""
-	    company = ""
-	    phone = ""
-	    deadline = ""
-	    budget = "-none-"
+  	    email = ""
+  	    url = ""
+  	    description = ""
+  	    company = ""
+  	    phone = ""
+  	    deadline = ""
+  	    budget = "-none-"
 
         SetValById("contact_name", name) & 
         SetValById("contact_email", email) &
@@ -170,18 +170,20 @@ class ContactForm {
         SetValById("contact_phone", phone) &
         SetValById("contact_deadline", deadline) &
         SetValById("contact_budget", budget) &
-        SetHtml("adw-conversion", 
-<noscript>
-<div style="display:inline;">
-<img height="1" width="1" style="border-style:none;" alt="" src="http://www.googleadservices.com/pagead/conversion/1071512688/?value=0&amp;label=hpzaCOLzugMQ8Pj3_gM&amp;guid=ON&amp;script=0"/>
-</div>
-</noscript>
-            )
+        SetHtml("adw-conversion", <noscript><div style="display:inline;"><img height="1" width="1" style="border-style:none;" alt="" src="http://www.googleadservices.com/pagead/conversion/1071512688/?value=0&amp;label=hpzaCOLzugMQ8Pj3_gM&amp;guid=ON&amp;script=0"/></div></noscript>) &
+        JsRaw("""
+var google_conversion_id = 1071512688;
+var google_conversion_language = "en";
+var google_conversion_format = "2";
+var google_conversion_color = "ffffff";
+var google_conversion_label = "hpzaCOLzugMQ8Pj3_gM";
+var google_conversion_value = 0;
+            """).cmd
+         
         
       }
       
     }
-	
     
     // binding looks normal
     "name=name" #> SHtml.text(name, name = _) &
