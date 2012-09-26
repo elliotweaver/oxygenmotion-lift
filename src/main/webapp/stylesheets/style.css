@@ -1260,10 +1260,11 @@ select, input[type="file"] {
 }
 .bar {}
 .bar .wrapper {
-	  padding: 7px 0;
+	  background: none repeat scroll 0 0 #31363B;
     border-bottom: 3px solid #000000;
-    background: #31363b;
     font-size: 15px;
+    letter-spacing: 0;
+    padding: 7px 0;
 }
 .bar .inner-in {
 	  position: relative;
